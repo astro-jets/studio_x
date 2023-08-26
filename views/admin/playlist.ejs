@@ -1,0 +1,71 @@
+<!-- Page Content  -->
+<div id="content-page" class="content-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="iq-card">
+          <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+              <h4 class="card-title">Charts</h4>
+            </div>
+            <div class="iq-card-header-toolbar d-flex align-items-center">
+              <a href="/admin/artists/new" class="btn btn-primary"
+                >Add New Chart</a
+              >
+            </div>
+          </div>
+          <div class="iq-card-body">
+            <div class="table-responsive">
+              <table
+                class="data-tables table table-striped table-bordered"
+                style="width: 100%"
+              >
+                <thead>
+                  <tr>
+                    <th style="width: 5%">Name</th>
+                    <th style="width: 10%">Genres</th>
+                    <th style="width: 10%">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% playlists.forEach(p => { %>
+                  <tr>
+                    <td><%=p.title%></td>
+                    <td>
+                      <% p.genres.forEach(g => { %>
+                      <li><%=g%></li>
+                      <% }); %>
+                    </td>
+                    <td>
+                      <div class="flex align-items-center list-user-action">
+                        <a
+                          class="bg-primary"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Edit"
+                          href="/admin/playlist/<%=p._id%>/edit"
+                          ><i class="ri-pencil-line"></i
+                        ></a>
+                        <a
+                          class="bg-primary"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="Delete"
+                          href="#"
+                          ><i class="ri-delete-bin-line"></i
+                        ></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

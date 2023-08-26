@@ -1,0 +1,181 @@
+<!-- Page Content -->
+<div id="content-page" class="content-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="iq-card">
+          <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+              <h4 class="card-title">Add New Track</h4>
+            </div>
+          </div>
+          <div class="iq-card-body">
+            <form
+              method="post"
+              action="/admin/tracks/new"
+              enctype="multipart/form-data"
+            >
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="fname">Album Art</label>
+                    <input class="filepond" type="file" name="art" />
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="form-group mx-1 col-10 p-0">
+                    <label for="fname">Artist</label>
+                    <select class="form-control form-control-lg" name="artist">
+                      <option selected="">Select Artist</option>
+                      <%artists.forEach(a => {%>
+                      <option value="<%=a.id%>"><%=a.artistname%></option>
+                      <%}); %>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="form-group mx-1 col-5">
+                      <label for="fname">Song Title</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fname"
+                        name="title"
+                        placeholder="Song title"
+                      />
+                    </div>
+                    <div class="form-group mx-1 col-5">
+                      <label for="fname">Contributing Artists</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fname"
+                        name="featuring"
+                        placeholder="ft Zeze"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group mx-1 col-5">
+                      <label for="fname">Song Upload</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="fname"
+                        name="song"
+                      />
+                    </div>
+                    <div class="form-group mx-1 col-5">
+                      <label for="fname">Song Duration</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fname"
+                        name="duration"
+                        placeholder="Song Duration (3:40)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="fname">Genre</label>
+                  <div class="col-12 p-0">
+                    <div
+                      class="custom-control custom-checkbox custom-control-inline"
+                    >
+                      <input
+                        name="genre"
+                        value="hiphop"
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="hiphop"
+                        checked=""
+                      />
+                      <label class="custom-control-label" for="hiphop"
+                        >Hip Hop</label
+                      >
+                    </div>
+
+                    <div
+                      class="custom-control custom-checkbox custom-control-inline"
+                    >
+                      <input
+                        name="genre"
+                        value="dancehall"
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="dancehall"
+                      />
+                      <label class="custom-control-label" for="dancehall"
+                        >Dancehall</label
+                      >
+                    </div>
+
+                    <div
+                      class="custom-control custom-checkbox custom-control-inline"
+                    >
+                      <input
+                        name="genre"
+                        value="reggae"
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="reggae"
+                      />
+                      <label class="custom-control-label" for="reggae"
+                        >Reggae</label
+                      >
+                    </div>
+
+                    <div
+                      class="custom-control custom-checkbox custom-control-inline"
+                    >
+                      <input
+                        name="genre"
+                        value="afro"
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="afro"
+                      />
+                      <label class="custom-control-label" for="afro"
+                        >Afro</label
+                      >
+                    </div>
+
+                    <div
+                      class="custom-control custom-checkbox custom-control-inline"
+                    >
+                      <input
+                        name="rnb"
+                        value="hiphop"
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="rnb"
+                      />
+                      <label class="custom-control-label" for="rnb">RnB</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    name="lyrics"
+                    id="lyrics"
+                    cols="30"
+                    rows="6"
+                    class="form-control p-0"
+                    placeholder="Song Lyrics"
+                  ></textarea>
+                </div>
+                <div class="form-group mt-5">
+                  <button class="btn btn-primary btn-lg col-12" type="submit">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

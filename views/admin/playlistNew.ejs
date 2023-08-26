@@ -1,0 +1,167 @@
+<style>
+  .avatar-img {
+    width: 6rem !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .bx {
+    border-radius: 10px;
+    padding: 0 1rem;
+    box-shadow: 3px 4px 7px 0.2rem rgb(0 0 0 / 26%);
+  }
+  .ac {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  /* Override the background color */
+  .swal2-confirm {
+    background-color: #007bff !important; /* Replace with your desired primary color */
+  }
+
+  /* Override the hover background color */
+  .swal2-confirm:hover {
+    background-color: #0056b3 !important; /* Replace with a darker shade of your primary color if desired */
+  }
+</style>
+<!-- Page Content -->
+<div id="content-page" class="content-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="iq-card">
+          <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+              <h4 class="card-title">Add New Playlist</h4>
+            </div>
+          </div>
+          <div class="iq-card-body">
+            <form id="playlist-form">
+              <div class="row">
+                <div class="col-5">
+                  <div class="form-group">
+                    <label for="playlist-name">Playlist Name</label>
+                    <input
+                      type="text"
+                      name="title"
+                      class="form-control"
+                      id="playlist-name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="playlist-name">Playlist Category</label>
+                    <div class="col-12 p-0">
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="hiphop"
+                          value="hiphop"
+                          name="hiphop"
+                          checked=""
+                        />
+                        <label class="custom-control-label" for="hiphop"
+                          >Hip Hop</label
+                        >
+                      </div>
+
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="dancehall"
+                          value="dancehall"
+                          name="dancehall"
+                          checked=""
+                        />
+                        <label class="custom-control-label" for="dancehall"
+                          >Dancehall</label
+                        >
+                      </div>
+
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="afro"
+                          value="afro"
+                          name="afro"
+                          checked=""
+                        />
+                        <label class="custom-control-label" for="afro"
+                          >Afro</label
+                        >
+                      </div>
+
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="rnb"
+                          value="rnb"
+                          name="rnb"
+                          checked=""
+                        />
+                        <label class="custom-control-label" for="rnb"
+                          >RnB</label
+                        >
+                      </div>
+                      <div
+                        class="custom-control custom-checkbox custom-control-inline"
+                      >
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="reggae"
+                          value="reggae"
+                          name="reggae"
+                          checked=""
+                        />
+                        <label class="custom-control-label" for="reggae"
+                          >Reggae</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="search-song">Search Song</label>
+                    <input type="text" class="form-control" id="search-song" />
+                  </div>
+
+                  <!-- Search Results -->
+                  <div id="search-results" class="mt-4"></div>
+                </div>
+
+                <div class="col-6 ml-5">
+                  <!-- Playlist -->
+                  <div id="playlist" class="mt-4"></div>
+
+                  <!-- Save Button -->
+                  <button
+                    id="save-button"
+                    type="submit"
+                    class="btn btn-primary mt-4"
+                  >
+                    Save Playlist
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../js/playlistForm.js"></script>

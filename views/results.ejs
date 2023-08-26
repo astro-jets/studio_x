@@ -1,0 +1,19 @@
+<section class="col-12">
+  <div class="album-details flex ac sa py-4">
+    <div class="album-name text-center">
+      <h1 class="text-light">Results</h1>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="album-tracks col-12 p-0 py-3">
+      <% results.forEach(r => {%>
+      <li class="bg-secondary my-1 px-2 py-3 text-light text-start">
+        <a href="/song/<%=r.song.id%>">
+          <%=r.song.title%>
+          <span class="text-muted"> <%=r.artist+" "+r.song.featuring%></span>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+</section>
