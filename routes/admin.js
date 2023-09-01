@@ -58,7 +58,22 @@ router.post("/tracks/new", songUpload.single("song"), async (req, res) => {
     }
 })
 
+// Searching a song
 router.get("/search/:term",controller.searchSongs);
+
+// Products
+router.get("/products/",controller.searchSongs);
+router.get("/products/new",async(req,res)=>{res.render("admin/productsNew",{layout:"layouts/admin"})});
+router.post("/products/new",async(req,res)=>{
+    try{
+    console.log("this is the body => ",req.body)
+    res.send(req.body.name)
+    }
+    catch(e){
+        res.send(e.message)
+    }
+});
+
 
 // Saving an art in the DB
 function saveThumbnail(artistDetails, encodedart)
